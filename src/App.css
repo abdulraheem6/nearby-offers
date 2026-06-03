@@ -1,11 +1,17 @@
 .app {
   position: relative;
+  width: 100%;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   background: #000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .loading {
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,9 +32,4 @@
 
 @keyframes spin {
   to { transform: rotate(360deg); }
-}
-
-.loading p {
-  font-size: 14px;
-  color: #888;
 }
