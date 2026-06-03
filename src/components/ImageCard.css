@@ -1,4 +1,4 @@
-.image-carousel {
+/* .image-carousel {
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -45,4 +45,82 @@
 .dot.active {
   width: 20px;
   background: white;
+} */
+
+.image-carousel {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.embla-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  touch-action: pan-y pinch-zoom;  /* Better touch handling */
+}
+
+.embla-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+}
+
+.image-card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Images fill screen on mobile */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Desktop optimization - show full image */
+@media (min-width: 1024px) {
+  .image-card {
+    object-fit: contain;
+    background: #000;
+  }
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;  /* Circular dots on mobile */
+  background: rgba(255,255,255,0.5);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: white;
+}
+
+/* Larger touch targets on mobile */
+@media (max-width: 768px) {
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .dot.active {
+    width: 28px;
+  }
 }

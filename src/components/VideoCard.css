@@ -1,5 +1,23 @@
-.video-card {
+/* .video-card {
   width: 100%;
   height: 100%;
   object-fit: cover;
+} */
+
+
+.video-card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures video fills screen without distortion */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* For desktop, maintain aspect ratio */
+@media (min-width: 1024px) {
+  .video-card {
+    object-fit: contain;
+    background: #000;
+  }
 }

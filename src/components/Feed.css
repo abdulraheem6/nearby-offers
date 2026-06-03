@@ -1,4 +1,4 @@
-.feed {
+/* .feed {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -23,4 +23,25 @@
   color: #888;
   font-size: 16px;
   background: #000;
+} */
+
+
+.feed {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;  /* Smooth iOS scrolling */
+  position: relative;
+  overscroll-behavior: none;  /* Prevents pull-to-refresh interference */
+}
+
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+.feed {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
