@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/tiktok-ad-feed/',
+  base: '/nearby-offers/',
   server: {
     port: 3000
   }
