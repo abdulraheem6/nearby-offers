@@ -10,7 +10,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   useEffect(() => {
-    fetch('/ads.json')
+    fetch('./ads.json')
       .then(res => res.json())
       .then(data => {
         setAds(data);
