@@ -1,11 +1,13 @@
 .ad-card {
   width: 100%;
   height: 100vh;
-  height: 100dvh; /* Dynamic height for mobile browsers */
   scroll-snap-align: start;
   position: relative;
   background: #000;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ad-card > video,
@@ -13,17 +15,17 @@
 .ad-card > iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;  /* Changed from 'cover' to 'contain' */
+  background: #000;
 }
 
-/* Desktop optimization */
-@media (min-width: 768px) {
-  .ad-card > video,
-  .ad-card > img,
-  .ad-card > iframe {
-    object-fit: contain;
-    background: #000;
-  }
+/* Ensure YouTube videos also fit */
+.ad-card > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .ad-overlay {
@@ -31,22 +33,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%);
   padding: 80px 20px 30px;
   pointer-events: none;
-}
-
-/* Responsive overlay padding */
-@media (max-width: 768px) {
-  .ad-overlay {
-    padding: 60px 16px 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .ad-overlay {
-    padding: 100px 40px 40px;
-  }
 }
 
 .ad-info {
@@ -55,18 +44,26 @@
 
 .ad-title {
   color: white;
-  font-size: clamp(18px, 5vw, 28px);
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 8px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .ad-title {
+    font-size: 18px;
+  }
+  .ad-overlay {
+    padding: 60px 16px 20px;
+  }
 }
 
 .featured-badge {
   display: inline-block;
   background: linear-gradient(135deg, #fe2c55, #ff6b8b);
   color: white;
-  font-size: clamp(10px, 3vw, 12px);
+  font-size: 12px;
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 20px;
@@ -80,21 +77,17 @@
   background: #25D366;
   color: white;
   text-decoration: none;
-  padding: clamp(8px, 4vw, 12px) clamp(16px, 5vw, 24px);
+  padding: 10px 20px;
   border-radius: 30px;
   font-weight: 600;
-  font-size: clamp(12px, 4vw, 14px);
+  font-size: 14px;
   margin-top: 8px;
-  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s;
   border: none;
   cursor: pointer;
 }
 
-.whatsapp-btn:active {
-  transform: scale(0.96);
-}
-
 .whatsapp-icon {
-  width: clamp(16px, 5vw, 20px);
-  height: clamp(16px, 5vw, 20px);
+  width: 20px;
+  height: 20px;
 }
