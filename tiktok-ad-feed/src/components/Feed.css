@@ -1,0 +1,26 @@
+.feed {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+.feed {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.empty-feed {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  font-size: 16px;
+  background: #000;
+}

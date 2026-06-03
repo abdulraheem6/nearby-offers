@@ -1,0 +1,75 @@
+.ad-card {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.ad-card > video,
+.ad-card > img,
+.ad-card > iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ad-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  padding: 80px 20px 30px;
+  pointer-events: none;
+}
+
+.ad-info {
+  pointer-events: auto;
+}
+
+.ad-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.featured-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #fe2c55, #ff6b8b);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+  transition: transform 0.2s, opacity 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+}

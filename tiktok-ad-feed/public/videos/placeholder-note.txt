@@ -1,0 +1,5 @@
+Place your MP4 video files here.
+For testing, you can download a sample video from:
+https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4
+
+Save it as sample-video.mp4 in this folder.

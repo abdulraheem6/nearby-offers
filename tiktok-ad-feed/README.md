@@ -1,4 +1,4 @@
-# nearby-offers
+# TikTok-Style Ad Feed
 
 A mobile-first, TikTok-style vertical feed for ads, built with React and Vite. Fully deployable on GitHub Pages.
 
